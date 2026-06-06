@@ -1,0 +1,15 @@
+long long zeroFilledSubarray(int* nums, int numsSize) {
+    long long totalSubarrays = 0;
+    long long currentZeroStreak = 0;
+
+    for (int i = 0; i < numsSize; i++) {
+        if (nums[i] == 0) {
+            currentZeroStreak++;
+            totalSubarrays += currentZeroStreak;
+        } else {
+            currentZeroStreak = 0;
+        }
+    }
+
+    return totalSubarrays;
+}
